@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+//@Document indicate that a class represents a document stored
+// in a MongoDB collection.
 @Document(collection = "movies")
 public class Movie {
 
