@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: movies-madness-back
+  data:
+    mongodb:
+      uri: mongodb+srv://tancredi:9hKtj9xG1XMQdtQU@cluster0.hhktbgu.mongodb.net/test
+
+      database: moviesdb
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/company-services
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: movies-madness-back
+      principal-attribute: preferred_username
+
+app:
+  cors:
+    allowed-origins: http://localhost:3000
+
+management:
+  endpoints:
+    web:
+      exposure.include: beans, env, health, info, metrics, mappings
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    groups-order: DESC
+    disable-swagger-default-url: false
+
+logging:
+  level:
+    org.springframework.security: DEBUG
