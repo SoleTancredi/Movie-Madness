@@ -1,5 +1,6 @@
 package com.soletancredi.moviesmadnessback.rest;
 
+import com.soletancredi.moviesmadnessback.mapper.MapperImpl;
 import com.soletancredi.moviesmadnessback.mapper.MovieMapper;
 import com.soletancredi.moviesmadnessback.persistence.model.Movie;
 import com.soletancredi.moviesmadnessback.rest.dto.AddCommentRequest;
@@ -11,6 +12,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +27,8 @@ import static com.soletancredi.moviesmadnessback.config.SwaggerConfig.BEARER_KEY
 @RequestMapping("/api/movies")
 public class MoviesController {
     private final MovieService movieService;
-    private final MovieMapper movieMapper;
+
+    private final MapperImpl movieMapper;
 
     @GetMapping
     public List<MovieDto> getMovies() {

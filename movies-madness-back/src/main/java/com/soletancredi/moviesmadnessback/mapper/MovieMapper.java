@@ -5,11 +5,9 @@ import com.soletancredi.moviesmadnessback.rest.dto.CreateMovieRequest;
 import com.soletancredi.moviesmadnessback.rest.dto.MovieDto;
 import com.soletancredi.moviesmadnessback.rest.dto.UpdateMovieRequest;
 import com.soletancredi.moviesmadnessback.service.UserService;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 @Mapper(
         componentModel = "spring",
