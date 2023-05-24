@@ -1,3 +1,8 @@
+export type FilmSearch = {
+	Response: boolean,
+	Search: MoviesObject[],
+	totalResults : number| string,
+}
 export interface MoviesObject {
   Title: string;
   Year: string;
