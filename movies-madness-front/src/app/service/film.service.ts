@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FilmSearch, MoviesObject } from '../models';
+import { FilmSearch, FilmsProps } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -19,18 +19,18 @@ export class FilmService {
     return this.http.get<FilmSearch>(query);
   }
 
-  getMoviesByTitle(title: string): Observable<MoviesObject> {
+  getMoviesByTitle(title: string): Observable<FilmsProps> {
     const query = this.baseUrl + `/?t=${title}&apikey=${this.envs.API_KEY}`;
-    return this.http.get<MoviesObject>(query);
+    return this.http.get<FilmsProps>(query);
   }
 
-  getMoviesByID(id: string | number): Observable<MoviesObject> {
+  getMoviesByID(id: string | number): Observable<FilmsProps> {
     const query = this.baseUrl + `/?i=${id}`;
-    return this.http.get<MoviesObject>(query);
+    return this.http.get<FilmsProps>(query);
   }
 
-  getFilmByYear(year: string | number): Observable<MoviesObject> {
+  getFilmByYear(year: string | number): Observable<FilmsProps> {
     const query = this.baseUrl + `/?y=${year}`;
-    return this.http.get<MoviesObject>(query);
+    return this.http.get<FilmsProps>(query);
   }
 }

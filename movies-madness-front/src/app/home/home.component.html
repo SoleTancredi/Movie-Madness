@@ -1,26 +1,7 @@
-<div class="text-center">Trailer popular movies</div>
-<div>
-  <input
-    class="input input-bordered w-full max-w-xs"
-    type="text"
-    placeholder="search your favourite movie"
-  />
-  <button class="btn btn-secondary">Search</button>
+<div class="flex flex-column gap-3">
+  <app-header></app-header>
+  <div class="text-center">Review classic movies</div>
+  <app-searchbar></app-searchbar>
+  <featured-comp></featured-comp>
+  <app-carousel [films]="this.data"></app-carousel>
 </div>
-
-<section class="flex justify-around flex-wrap">
-  <button class="btn btn-primary" type="button" routerLink="/login">
-    go to login
-  </button>
-  <!-- banner -->
-  <div class="btn btn-primary" (click)="getFilms()">get data</div>
-  <div *ngIf="this.data" class="w-full flex gap-4 flex-wrap justify-evenly">
-    <div *ngFor="let film of this.data">
-	    <div>{{ film?.Title }}</div>
-	    <div>
-		<img *ngIf="film" [src]="film?.Poster" alt="poster" width="200px"/>
-	    </div>
-    </div>
-  </div>
-  <!-- latest featured -->
-</section>

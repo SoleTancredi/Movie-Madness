@@ -1,0 +1,22 @@
+<section class="flex justify-content-center flex-wrap">
+  <div *ngIf="this.featured" class="px-4">
+    <div>Featured</div>
+    <div class="my-4 shadow-xl">
+      <figure>
+        <img
+          [src]="this.featured && this.featured.Poster"
+          width="200px"
+          alt="Movie"
+	    class="border-round-sm"
+        />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{{this.featured.Title}}</h2>
+        <p>Click the button to leave a review.</p>
+        <div className="card-actions justify-end">
+          <p-button className="btn btn-primary p-button-sm">Watch</p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

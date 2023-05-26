@@ -1,0 +1,38 @@
+<div *ngIf="films" class="flex flex-column">
+  <div class="text-2xl w-full px-4">{{ genre }}</div>
+  <p-carousel
+    [value]="films"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    autoPlayInterval="3000"
+  >
+    <ng-template let-film pTemplate="item">
+      <div class="border-1 surface-border border-round m-2 text-center">
+        <div class="mb-3">
+          <img width="100px" [src]="film.Poster" [alt]="" class="shadow-2" />
+        </div>
+        <div>
+          <h4 class="mb-1">{{ film.Title }}</h4>
+          <h6 class="mt-0 mb-3">{{ "Year :" + film.Year }}</h6>
+          <!-- <p-tag
+            [value]="product.inventoryStatus"
+            [severity]="getSeverity(product.inventoryStatus)"
+          ></p-tag> -->
+          <!-- <div class="car-buttons mt-5">
+            <p-button
+              type="button"
+              styleClass="p-button p-button-rounded mr-2"
+              icon="pi pi-search"
+            ></p-button>
+            <p-button
+              type="button"
+              styleClass="p-button-success p-button-rounded mr-2"
+              icon="pi pi-star-fill"
+            ></p-button>
+          </div> -->
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
