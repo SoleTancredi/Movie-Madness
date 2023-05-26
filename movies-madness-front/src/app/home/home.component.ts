@@ -19,12 +19,8 @@ export class HomeComponent implements OnInit {
   }
 
   getFilms() {
-    this.filmService.getFilmsBySearch('terror', 2).subscribe(
-      pipe((value) => {
-        this.data = value.Search;
-        console.log(this.data);
-      })
-    );
+    this.filmService
+      .getFilmsBySearch('terror', 2)
+      .subscribe(pipe((value) => (this.data = value.Search)));
   }
-
 }

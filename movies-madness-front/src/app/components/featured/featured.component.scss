@@ -1,0 +1,14 @@
+.card__wrapper {
+  perspective: 600px;
+  inset: 0;
+}
+
+.card__3d {
+  transition: transform 200ms;
+  transform: rotateY(var(--r-x)) rotateX(var(--r-y));
+  figure {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+}

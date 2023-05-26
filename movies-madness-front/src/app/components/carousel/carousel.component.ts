@@ -14,9 +14,7 @@ import { ButtonModule } from 'primeng/button';
 })
 export class CarouselComponent implements OnChanges {
   @Input() films?: FilmsProps[];
-  
+
   genre: string = 'Terror';
-  ngOnChanges() {
-    console.log('changes');
-  }
+  ngOnChanges() {}
 }
