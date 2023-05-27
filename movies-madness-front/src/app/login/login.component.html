@@ -1,21 +1,22 @@
 <div class="p-4 h-full">
   <p-button class="btn-sm" styleClass="p-button-sm" type="button" routerLink="/"
-    >Home</p-button
+    >← Home</p-button
   >
+  <div class="text-xl text-center m-4">Login</div>
   <div
     class="px-4 mt-6 flex flex-column justify-content-center align-content-center"
   >
     <form action="">
-	<div class="field p-inputgroup">
-	  <span class="p-inputgroup-addon">
-	    <i class="pi pi-user"></i>
-	  </span>
-	  <input pInputText placeholder="Username" />
-	</div>
-	<span class="p-float-label field mt-6">
-	  <p-password class="w-full" [toggleMask]="true">password</p-password>
-	  <label for="password">Password</label>
-	</span>
+      <div class="field p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <i class="pi pi-user"></i>
+        </span>
+        <input pInputText placeholder="Username" />
+      </div>
+      <span class="p-float-label field mt-6">
+        <p-password class="w-full" [toggleMask]="true">password</p-password>
+        <label for="password">Password</label>
+      </span>
     </form>
   </div>
 </div>

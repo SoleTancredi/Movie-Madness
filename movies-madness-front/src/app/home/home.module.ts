@@ -8,12 +8,15 @@ import { FeaturedComponent } from '../components/featured/featured.component';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { FooterComponent } from '../components/footer/footer.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
     SearchbarComponent,
     FeaturedComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
