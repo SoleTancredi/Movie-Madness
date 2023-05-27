@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from './enviroments/enviroment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PrimeNgModule } from './primeNG/primeng.module';
+import { PrimeNgCommonModule } from './primeNG/primeng.module';
+import { AppRoutingModule } from './app-routing.module';
+import { PasswordModule } from 'primeng/password';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +16,9 @@ import { PrimeNgModule } from './primeNG/primeng.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PrimeNgModule
+    PasswordModule,
+    FormsModule,
+//     PrimeNgCommonModule
   ],
   providers: [{ provide: 'ENV', useValue: environment }],
   bootstrap: [AppComponent],

@@ -5,12 +5,12 @@
     [numVisible]="3"
     [numScroll]="3"
     [circular]="true"
-    autoPlayInterval="3000"
+    autoPlayInterval="100"
   >
     <ng-template let-film pTemplate="item">
       <div class="border-1 surface-border border-round m-2 text-center">
         <div class="mb-3">
-          <img width="100px" [src]="film.Poster" [alt]="" class="shadow-2" />
+          <img id="img" [src]="film.Poster" [alt]="" class="shadow-2 w-10rem sm:w-14rem" />
         </div>
         <div>
           <h4 class="mb-1">{{ film.Title }}</h4>

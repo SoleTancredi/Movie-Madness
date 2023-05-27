@@ -17,6 +17,7 @@ import { FilmService } from 'src/app/service/film.service';
 })
 export class FeaturedComponent implements OnInit {
   coordinates: { rX: number; rY: number } = { rX: 0, rY: 0 };
+  coordinatesLight: { X: number; Y: number } = { X: 0, Y: 0 };
   featured?: FilmsProps;
   @ViewChild('featuredElement', { static: true }) FeaturedElement?: ElementRef;
 
@@ -44,24 +45,42 @@ export class FeaturedComponent implements OnInit {
     el.addEventListener('mousemove', (e: MouseEvent) => {
       let X = (e.clientX - b.left) / w;
       let Y = (e.clientY - b.top) / h;
-
-      let rX = (X - 0.5) * 20;
-      let rY = -(Y - 0.5) * 20;
+      this.coordinatesLight = {
+        X,
+        Y,
+      };
+      let rX = (X - 0.5) * 12;
+      let rY = -(Y - 0.5) * 12;
       this.coordinates = {
         rX,
         rY,
       };
     });
-    el.addEventListener('mouseleave', ()=>{
-	this.coordinates = { rX: 0, rY: 0};
-    })
+    el.addEventListener('mouseleave', () => {
+      this.coordinates = { rX: 0, rY: 0 };
+    });
   }
 
   runAnimation() {
     requestAnimationFrame(() => {
-	document.documentElement.style.setProperty('--r-x', this.coordinates.rX + 'deg');
-      document.documentElement.style.setProperty('--r-y', this.coordinates.rY + 'deg');
-	this.runAnimation();
+      document.documentElement.style.setProperty(
+        '--r-x',
+        this.coordinates.rX + 'deg'
+      );
+      document.documentElement.style.setProperty(
+        '--r-y',
+        this.coordinates.rY + 'deg'
+      );
+      // soft light
+      document.documentElement.style.setProperty(
+        '--x',
+        this.coordinatesLight.X * 100 + '%'
+      );
+      document.documentElement.style.setProperty(
+        '--y',
+        this.coordinatesLight.Y * 100 + '%'
+      );
+      this.runAnimation();
     });
   }
 }

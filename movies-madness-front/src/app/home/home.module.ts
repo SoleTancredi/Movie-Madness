@@ -1,15 +1,26 @@
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { CarouselComponent } from '../components/carousel/carousel.component';
-import { PrimeNgModule } from '../primeNG/primeng.module';
 import { HeaderComponent } from '../components/header/header.component';
 import { SearchbarComponent } from '../components/searchbar/searchbar.component';
 import { FeaturedComponent } from '../components/featured/featured.component';
-
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
-  declarations: [HomeComponent, HeaderComponent, SearchbarComponent, FeaturedComponent],
-  imports: [CommonModule, FormsModule, CarouselComponent, PrimeNgModule],
+  declarations: [
+    HomeComponent,
+    HeaderComponent,
+    SearchbarComponent,
+    FeaturedComponent,
+  ],
+  imports: [
+    CommonModule,
+    CarouselComponent,
+    RouterModule,
+    ButtonModule,
+    InputTextModule
+  ],
 })
 export class HomeModule {}

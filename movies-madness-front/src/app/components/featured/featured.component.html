@@ -6,12 +6,12 @@
         <div class="my-4 shadow-xl">
           <figure>
             <img
-              [src]="this.featured?.Poster"
-              width="200px"
+              [src]="this.featured?.Poster" 
               alt="Movie"
-              class="border-round-sm"
+		  class="shadow-2 w-6 sm:w-8 border-round-sm"
             />
           </figure>
+	    <div class="card__layer1"></div>
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@
       <h2 className="card-title">{{ this.featured?.Title }}</h2>
       <p>Click the button to leave a review.</p>
       <div className="card-actions justify-end">
-        <p-button className="btn btn-primary p-button-sm">Watch</p-button>
+        <p-button className="btn btn-primary p-button-sm">Comment</p-button>
       </div>
     </div>
   </div>
