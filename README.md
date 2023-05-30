@@ -1,6 +1,20 @@
 # Movie-Madness
 The goal of this project is to secure movies-app using Keycloak(with PKCE). movies-app consists of two applications: one is a Spring Boot Rest API called movies-api and another is a ReactJS application called movies-ui
 
+## Stack
+### ☕ backend
+- Java
+- SpringBoot
+- KeyCloack
+- MongoDB
+### 👩‍💻 frontend
+- Angular
+- NgPrime (ui-library)
+- TypeScript
+- imdbId API
+- Docker 
+- KeyCloack
+## 
 - ### movies-api
 
   `Spring Boot` Web Java backend application that exposes a REST API to manage **movies**. Its secured endpoints can just be accessed if an access token (JWT) issued by `Keycloak` is provided.
